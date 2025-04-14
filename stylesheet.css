@@ -1,0 +1,65 @@
+/*project container*/
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.project-card {
+  flex: 0 0 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-height: 150px;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: -10px;
+}
+
+.arrow.right {
+  right: -10px;
+}
+
+.more-button {
+  display: block;
+  margin: 2rem auto 0;
+  text-align: center;
+  font-weight: bold;
+  background-color: #007acc;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.more-button:hover {
+  background-color: #005fa3;
+}
