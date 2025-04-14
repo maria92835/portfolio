@@ -28,6 +28,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #004e89;
+  font-size:1.5rem;
+  padding: 1.5rem, 2rem;
   z-index: 2;
 }
 
