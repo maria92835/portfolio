@@ -18,12 +18,33 @@
     <!-- Home -->
       
     <!--About Section-->
-      <h2>ABOUT ME</h2>
+      <h2>About Me</h2>
     <!--Projects-->
-      <h2>PROJECTS</h2>
+      <section id="projects">
+      <h2>Projects</h2>
       <div class="carousel-container">
-      <button class="arrow left" onclick="scrollCarousel(-1)">←</button>
+        <button class="arrow left" onclick="scrollCarousel(-1)">←</button>
+        <div class="carousel" id="projectCarousel">
+          <div class="project-card">
+            <h3>Quadruped Robot</h3>
+            <p>4-legged Arduino-powered robot with balancing.</p>
+          </div>
+        <div class="project-card">
+          <h3>EEG Interface</h3>
+          <p>Brain control using motor imagery + left-right logic.</p>
+        </div>
+        <div class="project-card">
+          <h3>Bionic Hand</h3>
+          <p>Hand prosthetic with servo-based finger motion.</p>
+        </div>
+      </div>
+
+        <button class="arrow right" onclick="scrollCarousel(1)">→</button>
+      </div>
+
+      <a class="more-button" href="projects.html">More Projects →</a>
+</section>
     <!--Contact-->
-      <h2>CONTACT</h2>
+      <h2>Contact</h2>
   </body>
 </html>
