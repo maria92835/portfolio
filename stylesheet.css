@@ -1,33 +1,47 @@
-/*aboutsection mindmap*/
-
-.focus-map {
+/*Mindmap*/
+#focus-map {
   text-align: center;
-  margin-top: 2rem;
+  margin: 4rem 0;
+  position: relative;
 }
 
 .mindmap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
   position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
 }
 
 .node {
-  padding: 1rem 1.5rem;
-  background-color: #007acc;
+  position: absolute;
+  padding: 1rem 1.2rem;
+  border-radius: 999px;
   color: white;
-  border-radius: 2rem;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
 }
 
-.node.center {
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #004e89;
-  font-size: 1.2rem;
-  position: relative;
   z-index: 2;
+}
+
+/* Positioning around the center */
+.node1 { top: 0%; left: 50%; transform: translate(-50%, 0); background-color: #ff6b6b; }
+.node2 { top: 20%; left: 85%; transform: translate(-50%, -50%); background-color: #4ecdc4; }
+.node3 { top: 80%; left: 85%; transform: translate(-50%, -50%); background-color: #ffb400; }
+.node4 { top: 100%; left: 50%; transform: translate(-50%, -100%); background-color: #a29bfe; }
+.node5 { top: 80%; left: 15%; transform: translate(-50%, -50%); background-color: #00b894; }
+.node6 { top: 20%; left: 15%; transform: translate(-50%, -50%); background-color: #fd79a8; }
+
+.node:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 
