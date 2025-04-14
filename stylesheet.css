@@ -1,3 +1,36 @@
+/*aboutsection mindmap*/
+
+.focus-map {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.mindmap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.node {
+  padding: 1rem 1.5rem;
+  background-color: #007acc;
+  color: white;
+  border-radius: 2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.node.center {
+  background-color: #004e89;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+
 /*project container*/
 .carousel-container {
   position: relative;
