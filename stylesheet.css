@@ -1,3 +1,7 @@
+.section{
+  text-align:center;
+  font-weight:bold;
+}
 /*Mindmap*/
 #focus-map {
   text-align: center;
