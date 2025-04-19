@@ -1,55 +1,57 @@
-.sectionheader{
-  text-align:center;
-  font-weight:bold;
-  font-size: 35px;
-}
-/*Mindmap*/
-#focus-map {
+.mindmap-section {
+  background-color: #f8f8f8;
+  padding: 4rem 2rem;
   text-align: center;
-  margin: 4rem 0;
   position: relative;
 }
 
-.mindmap {
-  position: relative;
-  width: 400px;
-  height: 400px;
+.mindmap-title {
+  font-size: 3rem;
+  font-family: serif;
+  margin-bottom: 3rem;
+}
+
+.mindmap-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
-.node {
-  position: absolute;
-  padding: 1rem 1.2rem;
-  border-radius: 999px;
-  color: white;
-  font-weight: 600;
+.bubble {
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
   text-align: center;
   white-space: nowrap;
-  transition: transform 0.3s ease;
 }
 
-.center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #004e89;
-  font-size:2.5rem;
-  padding: 1.5rem, 2rem;
-  z-index: 2;
+.jp {
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-/* Positioning around the center */
-.node1 { top: 0%; left: 50%; transform: translate(-50%, 0); background-color: #ff6b6b; }
-.node2 { top: 20%; left: 85%; transform: translate(-50%, -50%); background-color: #4ecdc4; }
-.node3 { top: 80%; left: 85%; transform: translate(-50%, -50%); background-color: #ffb400; }
-.node4 { top: 100%; left: 50%; transform: translate(-50%, -100%); background-color: #a29bfe; }
-.node5 { top: 80%; left: 15%; transform: translate(-50%, -50%); background-color: #00b894; }
-.node6 { top: 20%; left: 15%; transform: translate(-50%, -50%); background-color: #fd79a8; }
+.purple { background-color: #d8c9f2; }
+.violet { background-color: #d67ff9; }
+.blue { background-color: #719bff; }
+.lightblue { background-color: #76caff; }
+.pink { background-color: #f9b5dc; }
+.hotpink { background-color: #f961b4; }
+.gray { background-color: #888888; color: white; }
+.beige { background-color: #f2dcc2; font-weight: bold; }
 
-.node:hover {
-  transform: scale(1.1) translate(-50%, -50%);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+@media (max-width: 768px) {
+  .bubble {
+    white-space: normal;
+    padding: 1rem;
+  }
 }
+
 
 
 /*project container*/
