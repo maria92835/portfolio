@@ -1,36 +1,19 @@
-.mindmap-section {
-  background-color: #f8f8f8;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.mindmap-title {
-  font-size: 3rem;
-  font-weight: bold;
-  font-family: serif;
-  margin-bottom: 3rem;
-}
-
 .mindmap-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   align-items: center;
+  gap: 2rem;
 }
 
 .bubble-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .bubble-row.offset {
   margin-left: 3rem;
-}
-
-.bubble-row.center {
-  justify-content: center;
 }
 
 .bubble {
@@ -38,24 +21,19 @@
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 500;
-  white-space: normal;
   text-align: center;
-  color: black;
   max-width: 280px;
-  line-height: 1.4;
+  background-color: lightgray;
 }
 
-.jp {
-  font-size: 0.95rem;
-}
-
+/* Color classes */
 .purple { background-color: #e2d5f7; }
 .violet { background-color: #d67ff9; }
 .blue { background-color: #719bff; }
 .lightblue { background-color: #76caff; }
 .pink { background-color: #f9b5dc; }
-.hotpink { background-color: #f961b4; color: white; }
 .gray { background-color: #888888; color: white; }
+.hotpink { background-color: #f961b4; color: white; }
 .beige { background-color: #f2dcc2; font-weight: bold; }
 
 @media (max-width: 768px) {
@@ -67,6 +45,7 @@
     margin-left: 0;
   }
 }
+
 
 
 
