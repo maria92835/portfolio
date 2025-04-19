@@ -2,53 +2,69 @@
   background-color: #f8f8f8;
   padding: 4rem 2rem;
   text-align: center;
-  position: relative;
 }
 
 .mindmap-title {
   font-size: 3rem;
+  font-weight: bold;
   font-family: serif;
   margin-bottom: 3rem;
 }
 
-.mindmap-container {
+.mindmap-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bubble-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
+  gap: 1.5rem;
+}
+
+.bubble-row.offset {
+  margin-left: 3rem;
+}
+
+.bubble-row.center {
+  justify-content: center;
 }
 
 .bubble {
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 500;
-  color: black;
+  white-space: normal;
   text-align: center;
-  white-space: nowrap;
+  color: black;
+  max-width: 280px;
+  line-height: 1.4;
 }
 
 .jp {
   font-size: 0.95rem;
-  line-height: 1.4;
 }
 
-.purple { background-color: #d8c9f2; }
+.purple { background-color: #e2d5f7; }
 .violet { background-color: #d67ff9; }
 .blue { background-color: #719bff; }
 .lightblue { background-color: #76caff; }
 .pink { background-color: #f9b5dc; }
-.hotpink { background-color: #f961b4; }
+.hotpink { background-color: #f961b4; color: white; }
 .gray { background-color: #888888; color: white; }
 .beige { background-color: #f2dcc2; font-weight: bold; }
 
 @media (max-width: 768px) {
-  .bubble {
-    white-space: normal;
-    padding: 1rem;
+  .bubble-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bubble-row.offset {
+    margin-left: 0;
   }
 }
 
