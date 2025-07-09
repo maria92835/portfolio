@@ -1,3 +1,6 @@
+.sectionheader{
+  text-align: center;
+}
 .mindmap-wrapper {
   display: flex;
   flex-direction: column;
