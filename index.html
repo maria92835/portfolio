@@ -1,93 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset = "UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href=stylesheet.css>
-  <title>Portfolio website</title>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Robotics Engineer</title>
+    <!-- Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for a clean, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #e6edf3; /* Light text */
+        }
+        /* Custom scrollbar styling for a more polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161b22;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #21262d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #30363d;
+        }
+        .text-gradient {
+            background-image: linear-gradient(45deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Maria Fujisawa</a>
-      <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#about" class="about">About</a>
-        <a href="#projects" class="projects">Projects</a>
-        <a href="#Contact" class="contact">Contact</a>
-      </nav>      
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="p-6 md:p-8 flex justify-between items-center sticky top-0 bg-gray-900/90 backdrop-blur-sm z-50 rounded-b-xl">
+        <div class="text-xl md:text-2xl font-bold text-gray-100">Your Name</div>
+        <nav class="space-x-4 md:space-x-8">
+            <a href="#projects" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Projects</a>
+            <a href="#articles" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Articles</a>
+            <a href="#resume" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Resume</a>
+        </nav>
     </header>
-    <!-- Home -->
-      
-    <!--About Section-->
-    <section id="about">
-      <h1 class="sectionheader">About Me</h1>
-        <p>
-          Hi! I’m <strong>Maria Fujisawa</strong> — a 17-year-old student, aspiring engineer, and researcher based in Tokyo, Japan. 
-          I’m currently exploring how virtual reality can shape the future of brain-machine interfaces, and I’ve built a few websites
-          to support educational initiatives. I’m especially passionate about tackling the educational gap in hands-on STEM learning
-          in Japan, and I’m working to create more accessible, engaging opportunities for students to explore science and technology.
-        </p>
 
-        <p>
-          I'm currently leading <strong>GMTC Japan</strong> and <strong>YSI Japan</strong>, two organizations aimed at bringing hands-on
-          robotics and scientific learning to students across the country. 
-        </p>
-     
-    <div class="mindmap-wrapper">
-      <div class="bubble-row">
-      <div class="bubble purple">Global Perspective</div>
-      <div class="bubble violet">日本では実際に経験をして学ぶSTEM授業がほとんどない→<br><strong>手を動かして学ぶSTEM教育の普及</strong></div>
-      <div class="bubble blue">3D printing</div>
-    </div>
-    <div class="bubble-row offset">
-      <div class="bubble lightblue">Robotics</div>
-      <div class="bubble pink">HTML</div>
-      <div class="bubble gray">Mechatronics/engineering</div>
-      <div class="bubble hotpink">脳・Brain Machine Interfaces</div>
-    </div>
-    <div class="bubble-row center">
-    <div class="bubble beige">STEM Change Maker</div>
-    </div>
-  </div>
+    <main class="container mx-auto px-6 py-12 md:px-8 lg:px-12">
 
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center p-4 md:p-8">
+            <div class="space-y-6 md:space-y-8">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight">
+                    Hello, I'm <span class="text-gradient">Your Name</span>
+                </h1>
+                <p id="typing-text" class="text-lg md:text-2xl font-semibold text-gray-400 min-h-[1.5em]"></p>
+                <p class="max-w-3xl text-sm md:text-base text-gray-400 leading-relaxed">
+                    Welcome to my portfolio! As a student passionate about robotics, I'm dedicated to building innovative solutions and pushing the boundaries of what's possible. Here you'll find some of the projects and articles I've worked on.
+                </p>
+            </div>
+        </section>
 
+        <!-- Projects Section -->
+        <section id="projects" class="py-12 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-2">Project Title 1</h3>
+                    <p class="text-sm text-gray-400 mb-4">A brief description of your project. Mention the technologies you used, like Arduino, Python, or ROS, and what problem it solves.</p>
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 text-xs">
+                        View Project
+                    </a>
+                </div>
 
+                <!-- Project Card 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-2">Project Title 2</h3>
+                    <p class="text-sm text-gray-400 mb-4">Describe the second project. This could be a software simulation, a robotic arm, or a sensor network. Be specific about your contribution.</p>
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 text-xs">
+                        View Project
+                    </a>
+                </div>
 
-    <!--Projects-->
-  <section id="projects">
-      <h1 class= "sectionheader">Projects</h1
-                                           >
-      <div class="carousel-container">
-        <button class="arrow left" onclick="scrollCarousel(-1)">←</button>
-        <div class="carousel" id="projectCarousel">
-          <div class="project-card">
-            <h3>Quadruped Robot</h3>
-            <p>4-legged Arduino-powered robot with balancing.</p>
-          </div>
-        <div class="project-card">
-          <h3>EEG Interface</h3>
-          <p>Brain control using motor imagery + left-right logic.</p>
-        </div>
-        <div class="project-card">
-          <h3>Bionic Hand</h3>
-          <p>Hand prosthetic with servo-based finger motion.</p>
-        </div>
-      </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-2">Project Title 3</h3>
+                    <p class="text-sm text-gray-400 mb-4">Details about your third project. Highlight any challenges you overcame and what you learned in the process. This shows your problem-solving skills.</p>
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 text-xs">
+                        View Project
+                    </a>
+                </div>
 
-        <button class="arrow right" onclick="scrollCarousel(1)">→</button>
-      </div>
+                <!-- You can easily add more projects here by copying and pasting a project card. -->
+            </div>
+        </section>
 
-      <a class="more-button" href="projects.html">More Projects →</a>
-    </section>
-    <section id="mymission">
-      <h1 class= "sectionheader">Where I'm headed</h1>
-        <ul>
-          <li>Building an EEG-controlled hexapod robot</li>
-          <li>Creating an easily accessible makerspace for students in Tokyo</li>
-          <li>Design engaging STEM workshops that reach students who traditionally lack access to resources.</li>
-        </ul>
-    </section>
-    <!--Contact-->
-    <h1 class= "sectionheader">Contact</h1>
-  </body>
+        <!-- Articles Section -->
+        <section id="articles" class="py-12 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article Card 1 -->
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-2">Article Title 1</h3>
+                    <p class="text-sm text-gray-400 mb-4">A short summary of your article. This could be about a new robotics trend, a tutorial, or a reflection on a project.</p>
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 text-xs">
+                        Read Article
+                    </a>
+                </div>
+                <!-- Article Card 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-2">Article Title 2</h3>
+                    <p class="text-sm text-gray-400 mb-4">Another article summary. Showcasing your writing helps demonstrate your ability to communicate complex ideas clearly.</p>
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 text-xs">
+                        Read Article
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="py-12 md:py-24 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to learn more?</h2>
+            <p class="text-lg md:text-xl text-gray-400 mb-8">
+                Download my resume to get a full overview of my skills and experience.
+            </p>
+            <a href="/path/to/your/resume.pdf" download class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-300">
+                Download Resume
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-6 md:p-8 text-center text-sm text-gray-500 border-t border-gray-800">
+        <p>&copy; 2024 Your Name. Built with ❤️</p>
+    </footer>
+
+    <!-- JavaScript for the typing effect -->
+    <script>
+        const textElement = document.getElementById('typing-text');
+        const phrases = ["Aspiring Robotics Engineer", "Student & Maker", "Problem Solver"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            const displayText = isDeleting
+                ? currentPhrase.substring(0, charIndex - 1)
+                : currentPhrase.substring(0, charIndex + 1);
+
+            textElement.textContent = displayText;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, 1000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 150;
+            charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+            setTimeout(type, typingSpeed);
+        }
+
+        // Start the typing animation on window load.
+        window.onload = function() {
+            type();
+        };
+    </script>
+</body>
 </html>
