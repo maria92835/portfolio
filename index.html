@@ -15,6 +15,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #0d1117; /* Dark background */
             color: #e6edf3; /* Light text */
+            position: relative;
         }
         /* Custom scrollbar styling for a more polished look */
         ::-webkit-scrollbar {
@@ -35,9 +36,22 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Style the particle canvas to be in the background */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1; /* Subtle opacity */
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
+
+    <!-- Interactive background canvas -->
+    <canvas id="particle-canvas"></canvas>
 
     <!-- Header & Navigation -->
     <header class="p-6 md:p-8 flex justify-between items-center sticky top-0 bg-gray-900/90 backdrop-blur-sm z-50 rounded-b-xl">
@@ -45,6 +59,9 @@
         <nav class="space-x-4 md:space-x-8">
             <a href="#projects" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Projects</a>
             <a href="#articles" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Articles</a>
+            <a href="#experience" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Experience</a>
+            <!-- New navigation link for the Contact section -->
+            <a href="#contact" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Contact</a>
             <a href="#resume" class="text-sm md:text-base hover:text-cyan-400 transition-colors duration-300">Resume</a>
         </nav>
     </header>
@@ -99,7 +116,6 @@
                         View Project
                     </a>
                 </div>
-
             </div>
         </section>
 
@@ -164,6 +180,35 @@
             </div>
         </section>
 
+        <!-- New Contact Section -->
+        <section id="contact" class="py-12 md:py-24 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect!</h2>
+            <p class="text-lg md:text-xl text-gray-400 mb-8">
+                I'm always excited to discuss new projects, internships, or anything related to robotics. Feel free to reach out to me!
+            </p>
+            <div class="flex justify-center items-center space-x-6 md:space-x-8">
+                <!-- Email Link with Icon -->
+                <a href="mailto:your_email@example.com" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300" aria-label="Email">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 4H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-10 7L2 8V6l10 7 10-7z"></path>
+                    </svg>
+                </a>
+                <!-- Instagram Link with Icon -->
+                <a href="https://www.instagram.com/your_instagram_handle" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300" aria-label="Instagram">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.25 4.75A1.25 1.25 0 1 1 15.25 7a1.25 1.25 0 0 1 0-2.5zm-3 11a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-7a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"></path>
+                        <path d="M17.5 5.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V5.5zm-1 2.5h1.5v1.5h-1.5z"></path>
+                    </svg>
+                </a>
+                <!-- X (Twitter) Link with Icon -->
+                <a href="https://x.com/your_x_handle" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300" aria-label="X">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.901 1.153h3.684L14.417 9.07l7.71 10.74h-6.843l-4.707-6.52L6.11 19.81h-3.682l8.472-8.777L1.137 1.153h6.91l4.28 5.934L18.901 1.153zm-1.637 16.497l-.604-1.39-4.885-11.233-5.264 12.623H17.264z"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
         <!-- Resume Section -->
         <section id="resume" class="py-12 md:py-24 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Download my resume</h2>
@@ -179,7 +224,7 @@
         <p>&copy; 2024 Maria Fujisawa.</p>
     </footer>
 
-    <!-- JavaScript for the typing effect -->
+    <!-- JavaScript for the typing effect and particle background -->
     <script>
         const textElement = document.getElementById('typing-text');
         const phrases = ["Aspiring Robotics Engineer", "Student & Maker", "Neurotech Enthusiast"];
@@ -206,10 +251,103 @@
             charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
             setTimeout(type, typingSpeed);
         }
+        
+        // Particle effect script
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
 
-        // Start the typing animation on window load.
+        // Handle window resize and mouse movement
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        // Particle class definition
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 2 + 1;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.density = (Math.random() * 40) + 5;
+                this.color = color;
+            }
+
+            // Draw a single particle
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            // Update particle position and behavior
+            update() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = mouse.x ? 100 : 0; // Only repel if mouse is on screen
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < maxDistance) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        let dx = this.x - this.baseX;
+                        this.x -= dx / 10;
+                    }
+                    if (this.y !== this.baseY) {
+                        let dy = this.y - this.baseY;
+                        this.y -= dy / 10;
+                    }
+                }
+            }
+        }
+
+        // Initialize particles
+        function initParticles() {
+            particles = [];
+            let numberOfParticles = (canvas.width * canvas.height) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let x = Math.random() * canvas.width;
+                let y = Math.random() * canvas.height;
+                let color = "rgba(100, 150, 255, 0.7)";
+                particles.push(new Particle(x, y, color));
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, ctx.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        // Start the animations and typing effect on window load.
         window.onload = function() {
             type();
+            resizeCanvas();
+            initParticles();
+            animate();
         };
     </script>
 </body>
